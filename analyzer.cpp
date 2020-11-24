@@ -121,9 +121,9 @@ LexItem getNextToken(istream & in , int & linenum) {
           if (previousToken.GetToken() != ERR)
             return LexItem(ERR, lexeme, linenum);
           currentToken = LexItem(BEGIN, lexeme, linenum);
-        } else if (lexeme == "print")
+        } else if (lexeme == "print"){
           currentToken = LexItem(PRINT, lexeme, linenum);
-        else if (lexeme == "end") {
+        }else if (lexeme == "end") {
           if (previousToken.GetToken() != SCOMA)
             return LexItem(ERR, previousToken.GetLexeme(), linenum);
           currentToken = LexItem(END, lexeme, linenum);
